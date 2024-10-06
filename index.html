@@ -3,176 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Mohamed Mydeen Abdul Kader B</title>
     <link rel="stylesheet" href="styles.css">
-    <title>Resume Portfolio</title>
 </head>
 <body>
-    <header>
-        <h1>MOHAMED MYDEEN ABDUL KADER B</h1>
-        <p>Mobile: +91-6380460353 | Email: <a href="mailto:mohamedmakbsc@gmail.com">mohamedmakbsc@gmail.com</a></p>
-        <p><a href="https://www.linkedin.com/in/richardmtp/">LinkedIn Profile</a></p>
-    </header>
+    <div class="container">
+        <header class="header">
+            <h1>Mohamed Mydeen Abdul Kader B</h1>
+            <p>Mobile: <a href="tel:+916380460353">+91-6380460353</a> | Email: <a href="mailto:mohamedmakbsc@gmail.com">mohamedmakbsc@gmail.com</a></p>
+            <p><a href="https://www.linkedin.com/in/richardmtp/" target="_blank">LinkedIn Profile</a></p>
+        </header>
 
-    <section id="objective">
-        <h2>Objective</h2>
-        <p>A curious learner and creative team player. Looking for a challenging software engineer position where I can utilize my understanding of coding and software development to efficiently fulfill the team goals and corporate mission.</p>
-    </section>
+        <section class="objective">
+            <h2>Objective</h2>
+            <p>A curious learner and creative team player. Looking for a challenging software engineer position where I can utilize my understanding of coding and software development to efficiently fulfill the team goals and corporate mission.</p>
+        </section>
 
-    <section id="summary">
-        <h2>Summary</h2>
-        <p>Software Engineer with 3 years of work experience in .Net Core technologies and 1+ years of experience in agile development methodology. Hands-on experience with C#, Git, Azure DevOps.</p>
-    </section>
+        <section class="summary">
+            <h2>Summary</h2>
+            <p>Software Engineer with 3 years of work experience in .Net Core technologies and 1+ years in agile development methodology. Hands-on experience with C#, Git, and Azure DevOps.</p>
+        </section>
 
-    <section id="skills">
-        <h2>Skills</h2>
-        <h3>Programming & Scripting Languages</h3>
-        <p>C# .Net</p>
-        <h3>Database Systems</h3>
-        <p>Microsoft SQL Server, PostgreSQL, Neo4J, Cassandra, HBase</p>
-        <h3>Operating Systems</h3>
-        <p>Linux – Ubuntu / Windows series</p>
-        <h3>IDE & Other Tools</h3>
-        <p>Microsoft Visual Studio, VSCode</p>
-    </section>
+        <section class="skills">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <div class="skill">
+                    <h3>Programming & Scripting Languages</h3>
+                    <p>C#, .Net</p>
+                </div>
+                <div class="skill">
+                    <h3>Database Systems</h3>
+                    <p>Microsoft SQL Server, PostgreSQL, Neo4J, Cassandra, HBase</p>
+                </div>
+                <div class="skill">
+                    <h3>Operating Systems</h3>
+                    <p>Linux (Ubuntu), Windows</p>
+                </div>
+                <div class="skill">
+                    <h3>IDE & Tools</h3>
+                    <p>Microsoft Visual Studio, VSCode</p>
+                </div>
+            </div>
+        </section>
 
-    <section id="education">
-        <h2>Education</h2>
-        <p>BSc Computer Science, Manonmaniam Sundaranar University, 2021, 82%</p>
-        <p>12th HSC, Masood Thaika Higher Secondary School, 2016, 61%</p>
-        <p>10th, Masood Thaika Higher Secondary School, 2015, 80%</p>
-    </section>
-
-    <section id="work-experience">
-        <h2>Work Experience</h2>
-        <h3>Software Engineer, AMI Technology Service</h3>
-        <p>May 2021 - Jun 2022</p>
-        <h3>Software Engineer, Triton Tech Labs Private Limited</h3>
-        <p>Since Jun 2022</p>
-    </section>
-
-    <section id="projects">
-        <h2>Project Details</h2>
-
-        <div class="project">
-            <h3>Project #1: Effism NexGen</h3>
-            <p><strong>Technology:</strong> .Net core, Angular, WebSocket, Postgres, Azure DevOps</p>
-            <p><strong>Synopsis:</strong> Effism NexGen is an employee efficiency management web application to analyze each employee’s work efficiency and provide insights to top management.</p>
+        <section class="education">
+            <h2>Education</h2>
             <ul>
-                <li>Involved in self-assessment module development.</li>
-                <li>Involved in manager assessment module development.</li>
-                <li>Involved in Danger Zone module development.</li>
-                <li>Involved in various reports development.</li>
+                <li><strong>BSc Computer Science</strong> - Manonmaniam Sundaranar University, 2021 (82%)</li>
+                <li><strong>12th HSC</strong> - Masood Thaika Higher Secondary School, 2016 (61%)</li>
+                <li><strong>10th</strong> - Masood Thaika Higher Secondary School, 2015 (80%)</li>
             </ul>
-        </div>
+        </section>
 
-        <div class="project">
-            <h3>Project #2: Nippon Paint Ninja</h3>
-            <p><strong>Technology:</strong> .Net core, Neo4J, PostgreSQL</p>
-            <p><strong>Synopsis:</strong> A platform designed to sell paints and related products online.</p>
+        <section class="experience">
+            <h2>Work Experience</h2>
             <ul>
-                <li>Involved in customer management module development.</li>
-                <li>Involved in store management module development.</li>
-                <li>Involved in store inventory module development.</li>
+                <li><strong>Software Engineer</strong> - AMI Technology Service, May 2021 - Jun 2022</li>
+                <li><strong>Software Engineer</strong> - Triton Tech Labs Private Limited, Jun 2022 - Present</li>
             </ul>
-        </div>
+        </section>
 
-        <div class="project">
-            <h3>Project #3: Ninja (Nippon Paint)</h3>
-            <p><strong>Technology:</strong> .Net core, Microsoft SQL Server</p>
-            <p><strong>Synopsis:</strong></p>
+        <section class="projects">
+            <h2>Projects</h2>
+            <div class="project">
+                <h3>Effism NexGen</h3>
+                <p><strong>Technology:</strong> .Net Core, Angular, WebSocket, PostgreSQL, Azure DevOps</p>
+                <p>A web application to analyze employee efficiency and provide insights to management.</p>
+            </div>
+            <div class="project">
+                <h3>Nippon Paint Ninja</h3>
+                <p><strong>Technology:</strong> .Net Core, Neo4J, PostgreSQL</p>
+                <p>A platform for online sales of paints and related products.</p>
+            </div>
+            <div class="project">
+                <h3>Platoon</h3>
+                <p><strong>Technology:</strong> .Net Core, PostgreSQL, Neo4J</p>
+                <p>Management system for Nippon Paint contracts focusing on government schools.</p>
+            </div>
+            <div class="project">
+                <h3>Digimard Procham</h3>
+                <p><strong>Technology:</strong> .Net Core, Cassandra</p>
+                <p>High-performance data management system to enhance data retrieval performance.</p>
+            </div>
+        </section>
+
+        <section class="personal-info">
+            <h2>Personal Information</h2>
             <ul>
-                <li><strong>Module 1:</strong> Neo4j for Hierarchy Management - Managing complex hierarchies involving positions, users, cities, and dealers.</li>
-                <li><strong>Module 2:</strong> WebChat using Socket Communication - Real-time communication module leveraging socket connections.</li>
-                <li>Cloud Storage: Using Google Cloud Platform (GCP) for storing files and data securely.</li>
+                <li>Date of Birth: 16/03/1999</li>
+                <li>Current Location: Kadayanallur, India</li>
             </ul>
-        </div>
+        </section>
 
-        <div class="project">
-            <h3>Project #4: Platoon</h3>
-            <p><strong>Technology:</strong> .Net core, PostgresSQL, Neo4j</p>
-            <p><strong>Synopsis:</strong> Manages Nippon Paint contracts for multiple clients, focusing on government schools in India.</p>
-            <ul>
-                <li>User Management: Role-based access control for contractors, administrators, and government officials.</li>
-                <li>Contract Management: Create, update, and manage paint contracts for schools.</li>
-                <li>School Information System: Store and retrieve information about government schools (e.g., location, paint requirements).</li>
-                <li>Progress Tracker: Track the project’s current status with updates on stages like preparation, painting, and completion.</li>
-                <li>Financial Module: Manage payments, budgets, and invoices related to the contracts.</li>
-                <li>Notification System: Send alerts to clients and administrators regarding project deadlines, approvals, and payments.</li>
-            </ul>
-        </div>
-
-        <div class="project">
-            <h3>Project #5: Phygital QR Code for Paint Box Discount System</h3>
-            <p><strong>Technology:</strong> .Net core, Cassandra</p>
-            <p><strong>Synopsis:</strong> Develop a backend system to manage and process QR codes found inside paint boxes, offering discounts, coupons, and offers for users and dealers.</p>
-            <ul>
-                <li>QR code scanning system for users and dealers.</li>
-                <li>Instant reward generation: discounts, offers, or coupon codes based on scanned QR codes.</li>
-                <li>Real-time validation of QR codes to ensure uniqueness and prevent fraud.</li>
-                <li>User reward history and tracking.</li>
-            </ul>
-        </div>
-
-        <div class="project">
-            <h3>Project #6: Digimard Procham</h3>
-            <p><strong>Technology:</strong> .Net core, Cassandra</p>
-            <p><strong>Synopsis:</strong> Improve data retrieval performance for Nippon Paint’s large dataset by transitioning from PostgreSQL to Cassandra for efficient read/write operations.</p>
-            <ul>
-                <li>PostgreSQL to Cassandra Migration: Handle large datasets more efficiently using Cassandra’s partitioning for better scalability.</li>
-                <li>Improved Data Retrieval: Faster read and write operations with Cassandra to overcome PostgreSQL’s performance bottlenecks.</li>
-                <li>Real-time Data Processing: Efficient handling of new data arrivals without slowing down the system.</li>
-                <li>Seamless Data Access: Optimize user experience by providing quick access to frequently updated data.</li>
-            </ul>
-        </div>
-
-        <div class="project">
-            <h3>Project #7: Prochamp</h3>
-            <p><strong>Technology:</strong> .Net core, PostgreSQL</p>
-            <p><strong>Synopsis:</strong> Develop a system to track, manage, and process paint warranty claims, helping users efficiently resolve paint issues under warranty.</p>
-            <ul>
-                <li>Warranty Tracking: Monitor and track paint warranties, including expiration dates.</li>
-                <li>Claim Management: Allow users to easily claim warranty for paint issues.</li>
-                <li>Issue Resolution: Process claims and assign repair tasks to resolve user-reported issues.</li>
-                <li>User Notifications: Notify users about claim status, warranty expiration, and issue resolution updates.</li>
-            </ul>
-        </div>
-
-        <div class="project">
-            <h3>Project #8: International Table Tennis Project (ITTF)</h3>
-            <p><strong>Technology:</strong> .Net core, jQuery</p>
-            <p><strong>Synopsis:</strong> ITTF is an international table tennis management software used to manage tournaments and matches.</p>
-            <ul>
-                <li>Involved in reports module development.</li>
-                <li>Involved in graph module development.</li>
-                <li>Involved in match dashboard development.</li>
-            </ul>
-        </div>
-
-        <div class="project">
-            <h3>Project #9: Nippon Ninja</h3>
-            <p><strong>Technology:</strong> .Net core, Graph database</p>
-            <p><strong>Synopsis:</strong> Develop a system for Nippon Paint to manage user relationships, marketing campaigns, and paint sales.</p>
-            <ul>
-                <li>Graph database management for customer relationship tracking.</li>
-                <li>Marketing campaign management for promotions and sales.</li>
-                <li>User behavior analysis to enhance sales strategies.</li>
-            </ul>
-        </div>
-
-        <div class="project">
-            <h3>Project #10: Smart Home IoT Dashboard</h3>
-            <p><strong>Technology:</strong> .Net core, Raspberry Pi</p>
-            <p><strong>Synopsis:</strong> Create an IoT dashboard to manage and monitor smart home devices through a centralized interface.</p>
-            <ul>
-                <li>Integration with various smart home devices using APIs.</li>
-                <li>User interface development for device control and monitoring.</li>
-                <li>Real-time data analytics for energy consumption and performance monitoring.</li>
-            </ul>
-        </div>
-    </section>
-
-    <footer>
-        <p>© 2024 Mohamed Mydeen Abdul Kader B</p>
-    </footer>
+        <footer class="footer">
+            <p>&copy; 2024 Mohamed Mydeen Abdul Kader B. All Rights Reserved.</p>
+        </footer>
+    </div>
 </body>
 </html>
