@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Video Chat</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.min.js"></script>
+</head>
+<body>
+    <h1>Video Chat</h1>
+    <div>
+        <button onclick="startRandomChat()">Join Random Chat</button>
+        <input type="text" id="room-id" placeholder="Enter Room ID" />
+        <button onclick="joinRoom()">Join Room</button>
+    </div>
+    
+    <video id="local-video" autoplay muted></video>
+    <video id="remote-video" autoplay></video>
+
+    <script>
+        const socket = io.connect('http://127.0.0.1:5000');
+        let localStream;
+        let remoteStream;
+        let peerConnection;
+        let currentRoom;
+
+        const configuration = {
+            iceServers: [{ urls: 'stun:stun.l.google.com:19302' }]
+        };
+
+        async function startVideo() {
+            localStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+            document.getElementById('local-video').srcObject = localStream;
+
+            peerConnection = new RTCPeerConnection(configuration);
+            localStream.getTracks().forEach(track => peerConnection.addTrack(track, localStream));
+
+            peerConnection.onicecandidate = event => {
+                if (event.candidate) {
+                    socket.emit('ice_candidate', { room: currentRoom, candidate: event.candidate });
+                }
+            };
+
+            peerConnection.ontrack = event => {
+                if (!remoteStream) {
+                    remoteStream = new MediaStream();
+                    document.getElementById('remote-video').srcObject = remoteStream;
+                }
+                remoteStream.addTrack(event.track);
+            };
+        }
+
+        function startRandomChat() {
+            socket.emit('join_random');
+            socket.on('join_room', room => {
+                currentRoom = room;
+                startVideo();
+            });
+        }
+
+        function joinRoom() {
+            const roomId = document.getElementById('room-id').value;
+            if (roomId) {
+                currentRoom = roomId;
+                socket.emit('join_room', roomId);
+                startVideo();
+            }
+        }
+
+        socket.on('offer', async data => {
+            if (data.room === currentRoom) {
+                await peerConnection.setRemoteDescription(new RTCSessionDescription(data.offer));
+                const answer = await peerConnection.createAnswer();
+                await peerConnection.setLocalDescription(answer);
+                socket.emit('answer', { room: currentRoom, answer });
+            }
+        });
+
+        socket.on('answer', async data => {
+            if (data.room === currentRoom) {
+                await peerConnection.setRemoteDescription(new RTCSessionDescription(data.answer));
+            }
+        });
+
+        socket.on('ice_candidate', data => {
+            if (data.room === currentRoom && data.candidate) {
+                peerConnection.addIceCandidate(new RTCIceCandidate(data.candidate));
+            }
+        });
+    </script>
+</body>
+</html>
